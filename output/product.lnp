@@ -1,0 +1,4 @@
+".\output\STARTUP.obj",
+".\output\product.obj" 
+TO ".\output\product" 
+PRINT(".\product.m51") RAMSIZE(256) 

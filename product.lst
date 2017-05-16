@@ -1,0 +1,59 @@
+C51 COMPILER V9.56.0.0   PRODUCT                                                           05/16/2017 23:23:25 PAGE 1   
+
+
+C51 COMPILER V9.56.0.0, COMPILATION OF MODULE PRODUCT
+OBJECT MODULE PLACED IN .\output\product.obj
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE blocks\product.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\produc
+                    -t.lst) TABS(2) OBJECT(.\output\product.obj)
+
+line level    source
+
+   1          # include <reg51.h>
+   2          # include <stdio.h>
+   3          # include <fun.h>
+   4          
+   5          void product()
+   6          {
+   7   1          int a,b,c;
+   8   1          printf("Please enter two integers between 0 to 100, then you'll get the product.\n ");//printf()函数包
+             -含在stdio.h头文件里，为串口发送操作的封装
+   9   1          Delay100ms();
+  10   1        
+  11   1          scanf("%d%d",&a,&b);//scanf()函数包含在stdio.h头文件里，为串口输入操作的封装
+  12   1          Delay100ms();
+  13   1          printf("you print%d%d\n ",a,b);
+  14   1        
+  15   1          if((a<100)&&(a>0)&&(b<100)&&(b>0))
+  16   1          {
+  17   2              c = a*b;
+  18   2              printf("result is %d\n",c);
+  19   2          }
+  20   1          else
+  21   1              printf("Warnning! Please make sure the numbers you've entered were two integers between 0 to 100!\
+             -n");
+  22   1      }
+  23          /***本函数中所使用的两个封装后的函数操作及使用方法见 http://www.51hei.com/mcu/3295.html ***/
+  24          /***本函数的操作亦可置于串口中断中，可自行尝试，不另述 ***/
+  25          
+  26          void main()
+  27          {
+  28   1          product();
+  29   1          while(1)
+  30   1          {
+  31   2      
+  32   2          }
+  33   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    189    ----
+   CONSTANT SIZE    =    201    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       4
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

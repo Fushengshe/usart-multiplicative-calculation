@@ -1,0 +1,61 @@
+
+
+# include <reg52.h>
+# include <stdio.h>
+# include <intrins.h>
+
+void Delay100ms()		
+{
+	unsigned char i, j, k;
+
+	_nop_();
+	_nop_();
+	i = 5;
+	j = 52;
+	k = 195;
+	do
+	{
+		do
+		{
+			while (--k);
+		} while (--j);
+	} while (--i);
+}
+
+void product(){
+	int a,b,c;
+	printf("please entre two integers between 0 to 100 \n ");
+	Delay100ms();
+	scanf("%d%d",&a,&b);
+	Delay100ms();
+	printf("you print%d%d\n ",a,b);
+	if((a<100)&&(a>0)&&(b<100)&&(b>0))
+	{
+		c = a*b;
+		printf("result is %d\n",c);
+	}
+	else
+	printf("Warning...\n");
+}
+
+
+void main()
+{
+
+	SCON=0X50;  //	@12mhz 4800	
+	TMOD=0X20;		
+	PCON=0X80;		
+	TH1=0XF3;			
+	TL1=0XF3;
+	RI=0;
+	ES=0;					
+	TR1=1;	
+	TI=1; 
+	
+	product();
+	while(1)
+	{
+
+
+	}
+}
